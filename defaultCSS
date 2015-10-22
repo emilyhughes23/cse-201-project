@@ -1,0 +1,7 @@
+body{
+	background-color: #ADADFF;
+	text-align: center;
+	margin: 100px 300px 100px 300px;
+	border: dashed;
+	padding: 20px;
+}
