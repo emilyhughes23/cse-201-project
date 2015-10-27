@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<title>Single Movie</title>
+		<link rel="stylesheet" type="text/css" href="defaultCSS">
+	</head>
+	<body>
+		<div style="text-align: center">
+		<h1>Movie Entry</h1>
+
+		<p>Single Movie entry</p>
+
+		<br/>
+
+		<p><a href="movie-list">Movie List</a></p>
+
+		<br/><br/>
+		<h3><a href="hello.html">Home</a></h3>
+		</div>
+	</body>
+	
+</html>
