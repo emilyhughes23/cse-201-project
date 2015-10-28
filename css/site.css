@@ -9,9 +9,33 @@ body{
 	background-color:white;
 }
 
-h1, h2{
+h1, h2, h3{
 	text-align: center;
 }
+
+img{
+	margin: 15px;
+}
+
+a.movieCard {
+	text-decoration: none;
+	color:black;
+	width:30%;
+	padding:5px;
+	margin:10px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	-webkit-transition: border .2s ease-in-out;
+       -o-transition: border .2s ease-in-out;
+          transition: border .2s ease-in-out;
+}
+
+.movieCard:hover{
+	border-color:blue;
+	text-decoration:none;
+}
+
+
 
 .commentBox {
     border:1px solid #bbb;
@@ -19,8 +43,8 @@ h1, h2{
 	padding:10px;
 }
 
-.commentBox .form-group * {
-    width:100%;
+.form-inline .form-control{
+	width:600px;
 }
 .taskDescription {
     margin-top:10px 0;
