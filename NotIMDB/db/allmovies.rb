@@ -1,34 +1,14 @@
-b = Movie.new
-b.title = "Goonies"
-b.genre = "Adventure"
-b.save
-
-c = Movie.new
-c.title = "27 Dresses"
-c.genre = "Romance"
-c.save
-
-d = Movie.new
-d.title = "Old School"
-d.genre = "Comedy"
-d.save
-
-e = Movie.new
-e.title = "Alien"
-e.genre = "SciFi"
-e.save
-
-f = Movie.new
-f.title = "Tangled"
-f.genre = "Animation"
-f.save
-
-g = Movie.new
-g.title = "Karate Kid"
-g.genre = "Drama"
-g.save
-
-h = Movie.new
-h.title = "Fight Club"
-h.genre = "Action"
-h.save
+Movie.create(id:"1",title:"Indiana Jones: Temple of Doom",genre:"Adventure")
+Movie.create(id:"2",title:"Jurassic Park",genre:"Adventure")
+Movie.create(id:"3",title:"27 Dresses",genre:"Romance")
+Movie.create(id:"4",title:"The Notebook",genre:"Romance")
+Movie.create(id:"5",title:"Paul Blart: Mall Cop",genre:"Comedy")
+Movie.create(id:"6",title:"The Other Guys",genre:"Comedy")
+Movie.create(id:"7",title:"Alien",genre:"Sci-Fi")
+Movie.create(id:"8",title:"Star Wars VII: The Force Awakens",genre:"Sci-Fi")
+Movie.create(id:"9",title:"Tangled",genre:"Animation")
+Movie.create(id:"10",title:"The Lion King",genre:"Animation")
+Movie.create(id:"11",title:"The Karate Kid",genre:"Drama")
+Movie.create(id:"12",title:"The Godfather",genre:"Drama")
+Movie.create(id:"13",title:"Fight Club",genre:"Action")
+Movie.create(id:"14",title:"Mad Max: Fury Road",genre:"Action")
