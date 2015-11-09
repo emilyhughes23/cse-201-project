@@ -31,14 +31,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="main-page.html">Not IMDB</a>
+      <a class="navbar-brand" href="index.html">Not IMDB</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="main-page.html">Home</a></li>
-        <li><a href="#">Request Movie Addition</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="request.html">Request Movie Addition</a></li>
        
       </ul>
       <form class="navbar-form navbar-right" role="search">
@@ -48,7 +48,6 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -56,7 +55,7 @@
             <li><a href="#">Another action</a></li>
             <li><a href="#">Something else here</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Log Out</a></li>
+            <li><a href="sign-up.html">Sign up</a></li>
           </ul>
         </li>
       </ul>
@@ -66,6 +65,85 @@
     
 	<div id="container">
 		<h1>Featured Movies</h1>
+		
+		<div class="row">
+			<div class="col-sm-6">
+				<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseFilter" aria-expanded="false" aria-controls="collapseExample">
+				  Filter by...
+				</button>
+				<div class="collapse" id="collapseFilter">
+					<div class="well row">
+					<div class="dropdown col-sm-6">
+					  <button class="btn btn-default dropdown-toggle" type="button" id="filterGenre" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						Genre
+						<span class="caret"></span>
+					  </button>
+					  <ul class="dropdown-menu" aria-labelledby="filterGenre">
+						<li><a href="#">Action</a></li>
+						<li><a href="#">Adventure</a></li>
+						<li><a href="#">Animated</a></li>
+						<li><a href="#">Comedy</a></li>
+						<li><a href="#">Drama</a></li>
+						<li><a href="#">Romance</a></li>
+						<li><a href="#">Sci-Fi</a></li>
+					  </ul>
+					</div>
+					<div class="dropdown col-sm-6">
+					  <button class="btn btn-default dropdown-toggle" type="button" id="filterRating" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						Rating
+						<span class="caret"></span>
+					  </button>
+					  <ul class="dropdown-menu" aria-labelledby="filterRating">
+						<li><a href="#">1/5</a></li>
+						<li><a href="#">2/5</a></li>
+						<li><a href="#">3/5</a></li>
+						<li><a href="#">4/5</a></li>
+						<li><a href="#">5/5</a></li>
+					  </ul>
+					</div>
+				  </div>
+				</div>
+			</div>
+			
+			<div class="col-sm-6">
+				<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseSort" aria-expanded="false" aria-controls="collapseExample">
+				  Sort by...
+				</button>
+				<div class="collapse" id="collapseSort">
+					<div class="well row">
+					<div class="dropdown col-sm-6">
+					  <button class="btn btn-default dropdown-toggle" type="button" id="sortAlphabetical" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						Alphabetical
+						<span class="caret"></span>
+					  </button>
+					  <ul class="dropdown-menu" aria-labelledby="sortAlphabetical">
+						<li><a href="#">A to Z</a></li>
+						<li><a href="#">Z to A</a></li>
+					  </ul>
+					</div>
+					<div class="dropdown col-sm-6">
+					  <button class="btn btn-default dropdown-toggle" type="button" id="sortRating" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						Rating
+						<span class="caret"></span>
+					  </button>
+					  <ul class="dropdown-menu" aria-labelledby="sortRating">
+						<li><a href="#">High to Low</a></li>
+						<li><a href="#">Low to High</a></li>
+					  </ul>
+					</div>
+				  </div>
+				</div>
+			</div>
+		</div>
+		
+		
+	
+		
+		
+		
+		
+		
+		
 		<div class="row">
 			<a href="single-movie.html" class="movieCard col-md-4">
 				<h3>Inside Out</h3>
