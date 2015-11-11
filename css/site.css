@@ -17,6 +17,10 @@ img{
 	margin: 15px;
 }
 
+
+.year-input{
+	width:60px;
+}
 a.movieCard {
 	text-decoration: none;
 	color:black;
