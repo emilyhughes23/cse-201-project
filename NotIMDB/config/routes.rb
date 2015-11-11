@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   resources :movies
-  get 'database'=> 'movies#index'
+  get 'database'=>'movies#index'
   resources :movies
-  get 'welcome' => 'pages#home'
+  root 'pages#home'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
