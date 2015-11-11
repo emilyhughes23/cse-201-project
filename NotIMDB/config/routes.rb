@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   get 'database'=>'movies#index'
   resources :movies
   root 'pages#home'
+  get 'request'=>'pages#request'
+  get 'singlemovie'=>'pages#single-movie'
+  get 'request'=>'pages#sign-up'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
