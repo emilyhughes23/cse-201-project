@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Title</th>
       <th>Genre</th>
       <th>Director</th>
@@ -21,6 +22,7 @@
   <tbody>
     <% @movies.each do |movie| %>
       <tr>
+        <td><%= movie.id %></id>
         <td><%= movie.title %></td>
         <td><%= movie.genre %></td>
         <td><%= movie.director %></td>

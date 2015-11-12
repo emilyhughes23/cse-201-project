@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
+  resources :movie_reqs
   resources :movies
-  get 'database'=>'movies#index'
+  get 'index'=>'movies#index'
   resources :movies
   root 'pages#home'
   get 'request'=>'pages#request'
   get 'single-movie'=>'pages#single-movie'
   get 'sign-up'=>'pages#sign-up'
-  
+  get 'show1'=>'movies#show1'
+
  get    'help'    => 'static_pages#help'
   get    'about'   => 'static_pages#about'
   get    'contact' => 'static_pages#contact'

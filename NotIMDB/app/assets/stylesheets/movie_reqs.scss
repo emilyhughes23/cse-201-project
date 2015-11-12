@@ -1,3 +1,7 @@
+// Place all the styles related to the MovieReqs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
 body{
 	background-color: #C2D1E0;
 }
@@ -17,6 +21,13 @@ img{
 	margin: 15px;
 }
 
+.well{
+	margin: 0 15px 15px 15px;
+}
+
+.sort-filter-btn{
+	margin-left:15px;
+}
 
 .year-input{
 	width:60px;

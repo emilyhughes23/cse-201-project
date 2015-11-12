@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Movie Template</title>
+    <title>NotIMDB</title>
 
     <!-- Bootstrap -->
     <link href="../../../vendor/assets/stylesheets/bootstrap.min.css" rel="stylesheet">
@@ -145,35 +145,41 @@
 
 
 		<div class="row">
-			<a href="single-movie.html" class="movieCard col-md-4">
-				<h3>Inside Out</h3>
-				<img src="http://ia.media-imdb.com/images/M/MV5BOTgxMDQwMDk0OF5BMl5BanBnXkFtZTgwNjU5OTg2NDE@._V1_SX214_AL_.jpg">
+			<a href="/show1" class="movieCard col-md-4">
+        <% movie = Movie.find(1) %>
+				<h3><%= movie.title %></h3>
+				<img src="http://ia.media-imdb.com/images/M/MV5BMTMyNzI4OTA5OV5BMl5BanBnXkFtZTcwMDQ2MjAxNA@@._V1_SX640_SY720_.jpg">
 			</a>
 
-			<a href="single-movie.html" class="movieCard col-md-4">
-				<h3>Jurassic Park </h3>
+			<a href="/show" class="movieCard col-md-4">
+        <% movie = Movie.find(2) %>
+				<h3><%= movie.title %></h3>
 				<img src="http://ia.media-imdb.com/images/M/MV5BMjM2MDgxMDg0Nl5BMl5BanBnXkFtZTgwNTM2OTM5NDE@._V1_SX214_AL_.jpg">
 			</a>
 
-			<a href="single-movie.html" class="movieCard col-md-4">
-				<h3>Mad Max: Fury Road </h3>
+			<a href="/show" class="movieCard col-md-4">
+        <% movie = Movie.find(32) %>
+				<h3><%= movie.title %></h3>
 				<img src="http://ia.media-imdb.com/images/M/MV5BMTUyMTE0ODcxNF5BMl5BanBnXkFtZTgwODE4NDQzNTE@._V1_SY317_CR2,0,214,317_AL_.jpg">
 			</a>
 		</div>
 
 		<div class="row">
-			<a href="single-movie.html" class="movieCard col-md-4">
-				<h3>Star Wars: Episode VII - The Force Awakens </h3>
+			<a href="/show" class="movieCard col-md-4">
+        <% movie = Movie.find(17) %>
+				<h3><%= movie.title %></h3>
 				<img src="http://ia.media-imdb.com/images/M/MV5BMTkwNzAwNDA4N15BMl5BanBnXkFtZTgwMTA2MDcwNzE@._V1_SX214_AL_.jpg">
 			</a>
 
-			<a href="single-movie.html" class="movieCard col-md-4">
-				<h3>The Shawshank Redemption</h3>
+			<a href="/show" class="movieCard col-md-4">
+        <% movie = Movie.find(28) %>
+				<h3><%= movie.title %></h3>
 				<img src="http://ia.media-imdb.com/images/M/MV5BODU4MjU4NjIwNl5BMl5BanBnXkFtZTgwMDU2MjEyMDE@._V1_SX214_AL_.jpg">
 			</a>
 
-			<a href="single-movie.html" class="movieCard col-md-4">
-				<h3>Mrs. Doubtfire </h3>
+			<a href="/show" class="movieCard col-md-4">
+        <% movie = Movie.find(13) %>
+				<h3><%= movie.title %></h3>
 				<img src="http://ia.media-imdb.com/images/M/MV5BMjExMDUzODE1N15BMl5BanBnXkFtZTgwNTU5NTYxMTE@._V1_SX214_AL_.jpg">
 			</a>
 		</div>
