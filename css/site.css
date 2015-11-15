@@ -15,6 +15,15 @@ h1, h2, h3{
 
 img{
 	margin: 15px;
+	max-width:215px;
+}
+
+.panel{
+	margin: 15px;
+}
+
+.panel-footer{
+	text-align:center;
 }
 
 .well{
