@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Not IMDB</title>
     
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
 	
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -20,9 +20,50 @@
   </head>
   
   <body>
-  <div class="container">
-      
-	<div id="container">
+	<nav class="navbar navbar-default">
+	<div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Not IMDB</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="request.html">Request Movie Addition</a></li>
+       
+      </ul>
+      <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="#">Action</a></li>
+				<li><a href="#">Another action</a></li>
+				<li><a href="#">Something else here</a></li>
+				<li role="separator" class="divider"></li>
+				<li><a href="sign-up.html">Sign up</a></li>
+			</ul>
+        </li>
+      </ul>
+	</div><!-- /.navbar-collapse -->
+	</div><!-- /.container-fluid -->
+	</nav>
+
+
+	<div class="container">
 		<h1>Featured Movies</h1>
 
 		<div class="row">
@@ -97,19 +138,19 @@
 
 		<div class="row">
 			<a href="/show1" class="movieCard col-md-4">
-        <% movie = Movie.find(1) %>
+			<% movie = Movie.find(1) %>
 				<h3><%= movie.title %></h3>
 				<img src="http://ia.media-imdb.com/images/M/MV5BMTMyNzI4OTA5OV5BMl5BanBnXkFtZTcwMDQ2MjAxNA@@._V1_SX640_SY720_.jpg">
 			</a>
 
 			<a href="/show" class="movieCard col-md-4">
-        <% movie = Movie.find(2) %>
+			<% movie = Movie.find(2) %>
 				<h3><%= movie.title %></h3>
 				<img src="http://ia.media-imdb.com/images/M/MV5BMjM2MDgxMDg0Nl5BMl5BanBnXkFtZTgwNTM2OTM5NDE@._V1_SX214_AL_.jpg">
 			</a>
 
 			<a href="/show" class="movieCard col-md-4">
-        <% movie = Movie.find(32) %>
+			<% movie = Movie.find(32) %>
 				<h3><%= movie.title %></h3>
 				<img src="http://ia.media-imdb.com/images/M/MV5BMTUyMTE0ODcxNF5BMl5BanBnXkFtZTgwODE4NDQzNTE@._V1_SY317_CR2,0,214,317_AL_.jpg">
 			</a>
@@ -117,24 +158,23 @@
 
 		<div class="row">
 			<a href="/show" class="movieCard col-md-4">
-        <% movie = Movie.find(17) %>
+			<% movie = Movie.find(17) %>
 				<h3><%= movie.title %></h3>
 				<img src="http://ia.media-imdb.com/images/M/MV5BMTkwNzAwNDA4N15BMl5BanBnXkFtZTgwMTA2MDcwNzE@._V1_SX214_AL_.jpg">
 			</a>
 
 			<a href="/show" class="movieCard col-md-4">
-        <% movie = Movie.find(28) %>
+			<% movie = Movie.find(28) %>
 				<h3><%= movie.title %></h3>
 				<img src="http://ia.media-imdb.com/images/M/MV5BODU4MjU4NjIwNl5BMl5BanBnXkFtZTgwMDU2MjEyMDE@._V1_SX214_AL_.jpg">
 			</a>
 
 			<a href="/show" class="movieCard col-md-4">
-        <% movie = Movie.find(13) %>
+			<% movie = Movie.find(13) %>
 				<h3><%= movie.title %></h3>
 				<img src="http://ia.media-imdb.com/images/M/MV5BMjExMDUzODE1N15BMl5BanBnXkFtZTgwNTU5NTYxMTE@._V1_SX214_AL_.jpg">
 			</a>
 		</div>
-	</div>
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
