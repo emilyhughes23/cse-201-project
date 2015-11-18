@@ -40,10 +40,6 @@
  	text-align: center;
  }
 
- img{
- 	margin: 15px;
- }
-
  .well{
  	margin: 0 15px 15px 15px;
  }
@@ -103,3 +99,8 @@
      font-family:verdana;
      font-size:11px;
  }
+ 
+  img{
+	margin: 15px;
+	max-width:215px;
+}
