@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151110182241) do
+ActiveRecord::Schema.define(version: 20151112070317) do
+
+  create_table "movie_reqs", force: :cascade do |t|
+    t.string   "title"
+    t.string   "genre"
+    t.string   "director"
+    t.string   "actor1"
+    t.string   "actor2"
+    t.string   "actor3"
+    t.integer  "releaseyr"
+    t.integer  "rating"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "movies", force: :cascade do |t|
     t.string   "title"
@@ -26,5 +40,18 @@ ActiveRecord::Schema.define(version: 20151110182241) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "password_digest"
+    t.string   "password_hint"
+    t.boolean  "admin",           default: false
+    t.boolean  "mod"
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end
