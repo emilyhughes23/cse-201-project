@@ -93,3 +93,8 @@
      font-family:verdana;
      font-size:11px;
  }
+ 
+ img{
+	margin: 15px;
+	max-width:215px;
+}
