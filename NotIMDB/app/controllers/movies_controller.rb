@@ -4,40 +4,40 @@ class MoviesController < ApplicationController
   # GET /movies
   # GET /movies.json
   def index
-    @movies = Movie.all
-	
+    @movie = Movie.all
+
 	if params[:search]
-      @movies = Movie.search(params[:search])
-	  
+      @movie = Movie.search(params[:search])
     end
   end
 
   # GET /movies/1
   # GET /movies/1.json
   def show
-    @tweet = Tweet.find(params[:id])
+    @movie = Movie.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
+      format.json {render :json => @post}
   end
 
   # GET /movies/new
   def new
-    @movie = Movie.new
+    @movies = Movie.new
   end
 
   # GET /movies/1/edit
   def edit
-    @tweet = Movie.find(params[:id])
+    @movie = Movie.find(params[:id])
   end
 
   # POST /movies
   # POST /movies.json
   def create
-    @movie = Movie.new(movie_params)
+    @movie = Movie.new(params[:movie])
 
     respond_to do |format|
       if @movie.save
-        format.html { redirect_to @movie, notice: 'Movie was successfully created.' }
+        format.html { redirect_to 'index', notice: 'Movie was successfully created.' }
         format.json { render :show, status: :created, location: @movie }
       else
         format.html { render :new }
