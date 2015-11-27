@@ -20,7 +20,7 @@
   </thead>
 
   <tbody>
-    <% @movies.each do |movie| %>
+    <% Movie.all.each do |movie| %>
       <tr>
         <td><%= movie.id %></id>
         <td><%= movie.title %></td>
