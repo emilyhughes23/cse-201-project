@@ -4,40 +4,61 @@ class MoviesController < ApplicationController
   # GET /movies
   # GET /movies.json
   def index
-    @movie = Movie.all
+  
+  orderBy = ""
 
-	if params[:search]
-      @movie = Movie.search(params[:search])
-    end
-  end
+	if(params[:sort] == "titleAsc")
+		orderBy = "title asc"
+	elsif (params[:sort] == "titleDesc")
+		orderBy = "title desc"
+	elsif (params[:sort] == "rateAsc")
+		orderBy = "rating asc"
+	elsif (params[:sort] == "rateDesc")
+		orderBy = "rating desc"
+	end
+   
+	if (params[:filter_genre] == "All" && params[:filter_rating] == "")
+			@movies = Movie.all.order(orderBy)	
+	elsif (params[:filter_genre] && params[:filter_rating] == "")
+		@movies = Movie.filterGenre(params[:filter_genre]).order(orderBy)		
+	elsif (params[:filter_rating] && params[:filter_genre] == "All")
+		@movies = Movie.filterRating(params[:filter_rating]).order(orderBy)	
+	elsif (params[:filter_genre] && params[:filter_rating])
+		@movies = Movie.filter(params[:filter_genre], params[:filter_rating]).order(orderBy)	
+	elsif params[:search]
+      @movies = Movie.search(params[:search]).order(orderBy)
+	else 
+	@movies = Movie.all
+	end
+	
+end
 
   # GET /movies/1
   # GET /movies/1.json
   def show
-    @movie = Movie.find(params[:id])
+    @tweet = Tweet.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
-      format.json {render :json => @post}
   end
 
   # GET /movies/new
   def new
-    @movies = Movie.new
+    @movie = Movie.new
   end
 
   # GET /movies/1/edit
   def edit
-    @movie = Movie.find(params[:id])
+    @tweet = Movie.find(params[:id])
   end
 
   # POST /movies
   # POST /movies.json
   def create
-    @movie = Movie.new(params[:movie])
+    @movie = Movie.new(movie_params)
 
     respond_to do |format|
       if @movie.save
-        format.html { redirect_to 'index', notice: 'Movie was successfully created.' }
+        format.html { redirect_to @movie, notice: 'Movie was successfully created.' }
         format.json { render :show, status: :created, location: @movie }
       else
         format.html { render :new }
