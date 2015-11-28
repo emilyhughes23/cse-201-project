@@ -4,13 +4,34 @@ class MoviesController < ApplicationController
   # GET /movies
   # GET /movies.json
   def index
-    @movies = Movie.all
+  
+  orderBy = ""
+
+	if(params[:sort] == "titleAsc")
+		orderBy = "title asc"
+	elsif (params[:sort] == "titleDesc")
+		orderBy = "title desc"
+	elsif (params[:sort] == "rateAsc")
+		orderBy = "rating asc"
+	elsif (params[:sort] == "rateDesc")
+		orderBy = "rating desc"
+	end
+   
+	if (params[:filter_genre] == "All" && params[:filter_rating] == "")
+			@movies = Movie.all.order(orderBy)	
+	elsif (params[:filter_genre] && params[:filter_rating] == "")
+		@movies = Movie.filterGenre(params[:filter_genre]).order(orderBy)		
+	elsif (params[:filter_rating] && params[:filter_genre] == "All")
+		@movies = Movie.filterRating(params[:filter_rating]).order(orderBy)	
+	elsif (params[:filter_genre] && params[:filter_rating])
+		@movies = Movie.filter(params[:filter_genre], params[:filter_rating]).order(orderBy)	
+	elsif params[:search]
+      @movies = Movie.search(params[:search]).order(orderBy)
+	else 
+	@movies = Movie.all
+	end
 	
-	if params[:search]
-      @movies = Movie.search(params[:search])
-	  
-    end
-  end
+end
 
   # GET /movies/1
   # GET /movies/1.json

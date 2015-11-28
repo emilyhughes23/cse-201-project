@@ -20,8 +20,8 @@
 
       </ul>
 	  
-      <%= form_tag(movies_path, :method => "get", id: "search-form", class: "navbar-form navbar-right") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>
+      <%= form_tag(movies_path, :method => "get", class: "navbar-form navbar-right") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search", class: "form-control", :search => params[:search] %>
   <%= submit_tag "Search", class: 'btn btn-default' %>
 <% end %>
       
