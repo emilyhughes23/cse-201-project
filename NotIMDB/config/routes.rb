@@ -1,22 +1,24 @@
 Rails.application.routes.draw do
-  
-  resources :movie_reqs
+
   resources :movies
   get 'index'=>'movies#index'
-  resources :movies
+  get 'request'=>'movies#new'
   root 'pages#home'
   get 'home' => 'pages#home'
-  get 'request'=>'pages#request'
   get 'single-movie'=>'pages#single-movie'
   get 'sign-up'=>'pages#sign-up'
   get 'show1'=>'movies#show1'
+  get 'show/:id' => 'movies#show'
+  post ':controller(/:action(/:id(.:format)))'
+ get ':controller(/:action(/:id(.:format)))'
+
 
   resources :users
   get    'signup'  => 'users#new'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   get 'logout'  => 'sessions#destroy'
- 
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
