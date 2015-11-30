@@ -170,4 +170,8 @@ DEPENDENCIES
   turbolinks
   tzinfo-data
   uglifier (>= 1.3.0)
+<<<<<<< HEAD
   web-console (~> 2.0)
+=======
+  web-console (~> 2.0)
+>>>>>>> 434d4481883ba624af173cd5fbd8ce86621832e4

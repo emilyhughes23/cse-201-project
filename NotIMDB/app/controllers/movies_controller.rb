@@ -36,10 +36,12 @@ end
   # GET /movies/1
   # GET /movies/1.json
   def show
-    @tweet = Tweet.find(params[:id])
+    @movie = Movie.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
+	end
   end
+
 
   # GET /movies/new
   def new
@@ -48,7 +50,7 @@ end
 
   # GET /movies/1/edit
   def edit
-    @tweet = Movie.find(params[:id])
+    @movie = Movie.find(params[:id])
   end
 
   # POST /movies
@@ -56,16 +58,21 @@ end
   def create
     @movie = Movie.new(movie_params)
 
-    respond_to do |format|
+    
       if @movie.save
+        redirect_to index_url
+        flash[:success] = "Movie was successfully created."
+       
+
         format.html { redirect_to @movie, notice: 'Movie was successfully created.' }
         format.json { render :show, status: :created, location: @movie }
+
       else
-        format.html { render :new }
-        format.json { render json: @movie.errors, status: :unprocessable_entity }
+       render 'new'
+       
       end
     end
-  end
+ 
 
   # PATCH/PUT /movies/1
   # PATCH/PUT /movies/1.json
@@ -102,4 +109,4 @@ end
       params.require(:movie).permit(:title, :genre, :director, :actor1, :actor2, :actor3, :releaseyr, :rating, :description)
     end
 end
-end
+
