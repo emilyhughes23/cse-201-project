@@ -41,12 +41,8 @@ end
       format.html # show.html.erb
 	end
   end
-<<<<<<< HEAD
-  
-=======
-  end
 
->>>>>>> 56edcf095a604cae776d1612a3240b42fde74889
+
   # GET /movies/new
   def new
     @movie = Movie.new
@@ -64,14 +60,13 @@ end
 
     
       if @movie.save
-<<<<<<< HEAD
         redirect_to index_url
         flash[:success] = "Movie was successfully created."
        
-=======
+
         format.html { redirect_to @movie, notice: 'Movie was successfully created.' }
         format.json { render :show, status: :created, location: @movie }
->>>>>>> 243b2b182eaaf225f25bad2e853883c5711bd9b6
+
       else
        render 'new'
        
@@ -114,7 +109,4 @@ end
       params.require(:movie).permit(:title, :genre, :director, :actor1, :actor2, :actor3, :releaseyr, :rating, :description)
     end
 end
-<<<<<<< HEAD
 
-=======
->>>>>>> 56edcf095a604cae776d1612a3240b42fde74889
