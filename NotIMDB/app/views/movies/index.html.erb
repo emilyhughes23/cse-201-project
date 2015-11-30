@@ -1,7 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Movies</h1>
+<body>
+  <div class="container">
+      
+	<div id="container">
+		<h1>Featured Movies</h1>
+		
+<%= form_tag(movies_path, :method => "get", id: "search-form") do %>
+		<div class="row">
+			<div class="col-sm-6">
+				<div>
+					<div class="well row">
+					<div class="dropdown col-sm-6">
+					 Genre: <br> 
+					 <%= select_tag(:filter_genre, options_for_select([['All', 'All'],['Action', 'Action'], ['Adventure', 'Adventure'],['Animation', 'Animation'],
+					 ['Comedy', 'Comedy'],['Drama', 'Drama'],['Romance', 'Romance'],['Sci-Fi', 'Sci-Fi']], 
+					 :selected => params[:filter_genre]), :onchange => "this.form.submit();")%>
+					</div>
+					<div class="dropdown col-sm-6">
+					 Rating: <br>
+					  <%= select_tag(:filter_rating, options_for_select([['', ],['1', 1], ['2', 2],['3', 3],['4', 4],['5', 5]], :selected => params[:filter_rating]), 
+					  :onchange => "this.form.submit();") %>
+					  <br><br>
+					</div>
+				  </div>	  
+				</div>
+			</div>
 
+<<<<<<< HEAD
 <table>
   <thead>
     <tr>
@@ -36,9 +62,35 @@
         <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
         <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+=======
+			<div class="col-sm-6">
+				<div>
+					<div class="well row">
+					<div class="dropdown col-sm-6">
+						Sort By: <br>
+					<%= select_tag(:sort, options_for_select([['Featured', ''],['Title A-Z', 'titleAsc'], ['Title Z-A', 'titleDesc'],['Rating High-Low', 'rateDesc'], 
+					['Rating Low-High', 'rateAsc']], :selected => params[:sort]), :onchange => "this.form.submit();")%>
+					<br><br>
+					</div>					
+				  </div>
+				</div>
+			</div>
+		</div>
+		<% end %>
+  <div class= "row">
+    <% @movies.each do |movie| %>
+       <a href="/show1" class="movieCard col-md-4">
+        <% movie.title %>
+				<h3><%= movie.title %></h3>
+				<h3><%= movie.genre %></h3>
+				<h3><%= movie.rating %></h3>
+		</a>
+>>>>>>> 243b2b182eaaf225f25bad2e853883c5711bd9b6
     <% end %>
-  </tbody>
-</table>
+	</div>
+
+
+</body>
 
 <br>
 
