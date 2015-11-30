@@ -19,10 +19,11 @@ class MoviesController < ApplicationController
       format.html # show.html.erb
       format.json {render :json => @post}
   end
+  end
 
   # GET /movies/new
   def new
-    @movies = Movie.new
+    @movie = Movie.new
   end
 
   # GET /movies/1/edit
@@ -33,18 +34,19 @@ class MoviesController < ApplicationController
   # POST /movies
   # POST /movies.json
   def create
-    @movie = Movie.new(params[:movie])
+    @movie = Movie.new(movie_params)
 
-    respond_to do |format|
+    
       if @movie.save
-        format.html { redirect_to 'index', notice: 'Movie was successfully created.' }
-        format.json { render :show, status: :created, location: @movie }
+        redirect_to index_url
+        flash[:success] = "Movie was successfully created."
+       
       else
-        format.html { render :new }
-        format.json { render json: @movie.errors, status: :unprocessable_entity }
+       render 'new'
+       
       end
     end
-  end
+ 
 
   # PATCH/PUT /movies/1
   # PATCH/PUT /movies/1.json
@@ -80,5 +82,4 @@ class MoviesController < ApplicationController
     def movie_params
       params.require(:movie).permit(:title, :genre, :director, :actor1, :actor2, :actor3, :releaseyr, :rating, :description)
     end
-end
 end

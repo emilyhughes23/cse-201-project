@@ -1,42 +1,42 @@
-<%= form_for :movie do |f| %>
+<%= form_for (@movie) do |f| %>
   
   <div class="field">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :genre %><br>
-    <%= f.text_field :genre %>
+    <%= f.text_field :genre, class: 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :director %><br>
-    <%= f.text_field :director %>
+    <%= f.text_field :director, class: 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :actor1 %><br>
-    <%= f.text_field :actor1 %>
+    <%= f.text_field :actor1, class: 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :actor2 %><br>
-    <%= f.text_field :actor2 %>
+    <%= f.text_field :actor2, class: 'form-control'  %>
   </div>
   <div class="field">
     <%= f.label :actor3 %><br>
-    <%= f.text_field :actor3 %>
+    <%= f.text_field :actor3, class: 'form-control'  %>
   </div>
   <div class="field">
     <%= f.label :releaseyr %><br>
-    <%= f.number_field :releaseyr %>
+    <%= f.number_field :releaseyr, class: 'form-control'  %>
   </div>
   <div class="field">
     <%= f.label :rating %><br>
-    <%= f.number_field :rating %>
+    <%= f.number_field :rating, class: 'form-control'  %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, class: 'form-control'  %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
   </div>
 <% end %>
