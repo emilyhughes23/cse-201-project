@@ -4,16 +4,44 @@ class MoviesController < ApplicationController
   # GET /movies
   # GET /movies.json
   def index
-    @movies = Movie.all
-  end
+  
+  orderBy = ""
+
+	if(params[:sort] == "titleAsc")
+		orderBy = "title asc"
+	elsif (params[:sort] == "titleDesc")
+		orderBy = "title desc"
+	elsif (params[:sort] == "rateAsc")
+		orderBy = "rating asc"
+	elsif (params[:sort] == "rateDesc")
+		orderBy = "rating desc"
+	end
+   
+	if (params[:filter_genre] == "All" && params[:filter_rating] == "")
+			@movies = Movie.all.order(orderBy)	
+	elsif (params[:filter_genre] && params[:filter_rating] == "")
+		@movies = Movie.filterGenre(params[:filter_genre]).order(orderBy)		
+	elsif (params[:filter_rating] && params[:filter_genre] == "All")
+		@movies = Movie.filterRating(params[:filter_rating]).order(orderBy)	
+	elsif (params[:filter_genre] && params[:filter_rating])
+		@movies = Movie.filter(params[:filter_genre], params[:filter_rating]).order(orderBy)	
+	elsif params[:search]
+      @movies = Movie.search(params[:search]).order(orderBy)
+	else 
+	@movies = Movie.all
+	end
+	
+end
 
   # GET /movies/1
   # GET /movies/1.json
   def show
-    @tweet = Tweet.find(params[:id])
+    @movie = Movie.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
+	end
   end
+
 
   # GET /movies/new
   def new
@@ -22,7 +50,7 @@ class MoviesController < ApplicationController
 
   # GET /movies/1/edit
   def edit
-    @tweet = Movie.find(params[:id])
+    @movie = Movie.find(params[:id])
   end
 
   # POST /movies
@@ -30,16 +58,21 @@ class MoviesController < ApplicationController
   def create
     @movie = Movie.new(movie_params)
 
-    respond_to do |format|
+    
       if @movie.save
+        redirect_to index_url
+        flash[:success] = "Movie was successfully created."
+       
+
         format.html { redirect_to @movie, notice: 'Movie was successfully created.' }
         format.json { render :show, status: :created, location: @movie }
+
       else
-        format.html { render :new }
-        format.json { render json: @movie.errors, status: :unprocessable_entity }
+       render 'new'
+       
       end
     end
-  end
+ 
 
   # PATCH/PUT /movies/1
   # PATCH/PUT /movies/1.json
@@ -76,4 +109,4 @@ class MoviesController < ApplicationController
       params.require(:movie).permit(:title, :genre, :director, :actor1, :actor2, :actor3, :releaseyr, :rating, :description)
     end
 end
-end
+

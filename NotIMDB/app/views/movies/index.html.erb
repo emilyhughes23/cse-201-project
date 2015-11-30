@@ -1,44 +1,71 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Movies</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Title</th>
-      <th>Genre</th>
-      <th>Director</th>
-      <th>Actor1</th>
-      <th>Actor2</th>
-      <th>Actor3</th>
-      <th>Releaseyr</th>
-      <th>Rating</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<body>
+  <div class="container">
+      
+	<div id="container">
+		<h1>All Movies</h1>
+		
+<%= form_tag(movies_path, :method => "get", id: "search-form") do %>
+		<div class="row">
+			<div class="col-sm-6">
+				<div>
+					<button class="btn btn-primary sort-filter-btn" type="button" data-toggle="collapse" data-target="#collapseFilter" aria-expanded="false" aria-controls="collapseExample">
+					  Filter by...
+					</button>
+					<div class="collapse" id="collapseFilter">
+						<div class="well row">
+						<div class="dropdown col-sm-6">
+						 Genre: <br> 
+						 <%= select_tag(:filter_genre, options_for_select([['All', 'All'],['Action', 'Action'], ['Adventure', 'Adventure'],['Animation', 'Animation'],
+						 ['Comedy', 'Comedy'],['Drama', 'Drama'],['Romance', 'Romance'],['Sci-Fi', 'Sci-Fi']], 
+						 :selected => params[:filter_genre]), :onchange => "this.form.submit();")%>
+						</div>
+						<div class="dropdown col-sm-6">
+						 Rating: <br>
+						  <%= select_tag(:filter_rating, options_for_select([['', ],['1', 1], ['2', 2],['3', 3],['4', 4],['5', 5]], :selected => params[:filter_rating]), 
+						  :onchange => "this.form.submit();") %>
+						  <br><br>
+						</div>
+						</div>	  
+					</div>
+				</div>
+			</div>
+	
+			<div class="col-sm-6">
+				<div>
+					<button class="btn btn-primary sort-filter-btn" type="button" data-toggle="collapse" data-target="#collapseSort" aria-expanded="false" aria-controls="collapseExample">
+					  Sort by...
+					</button>
+					<div class="collapse" id="collapseSort">
+						<div class="well row">
+						<div class="dropdown col-sm-6">
+							Sort By: <br>
+						<%= select_tag(:sort, options_for_select([['Featured', ''],['Title A-Z', 'titleAsc'], ['Title Z-A', 'titleDesc'],['Rating High-Low', 'rateDesc'], 
+						['Rating Low-High', 'rateAsc']], :selected => params[:sort]), :onchange => "this.form.submit();")%>
+						<br><br>
+						</div>					
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<% end %>
+		
+  <div class= "row">
     <% @movies.each do |movie| %>
-      <tr>
-        <td><%= movie.id %></id>
-        <td><%= movie.title %></td>
-        <td><%= movie.genre %></td>
-        <td><%= movie.director %></td>
-        <td><%= movie.actor1 %></td>
-        <td><%= movie.actor2 %></td>
-        <td><%= movie.actor3 %></td>
-        <td><%= movie.releaseyr %></td>
-        <td><%= movie.rating %></td>
-        <td><%= movie.description %></td>
-        <td><%= link_to 'Show', movie %></td>
-        <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
-        <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+		<%= link_to movie_path(movie.id), class:"movieCard col-md-4" do %>
+			<% movie.title %>
+				<h3><%= movie.title %></h3>
+				<h3><%= movie.genre %></h3>
+				<h3><%= movie.rating %></h3>
+
+		<% end %>
     <% end %>
-  </tbody>
-</table>
+	</div>
+
+
+</body>
 
 <br>
 
