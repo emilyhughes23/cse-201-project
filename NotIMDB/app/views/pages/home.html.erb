@@ -126,7 +126,7 @@
 
 
 			<% movie = Movie.find(28) %>
-			<%= link_to movie_path(movie.id), class:"movieCard col-md-4" %>
+			<%= link_to movie_path(movie.id), class:"movieCard col-md-4" do%>
 				<h3><%= movie.title %></h3>
 				<img src="http://ia.media-imdb.com/images/M/MV5BODU4MjU4NjIwNl5BMl5BanBnXkFtZTgwMDU2MjEyMDE@._V1_SX214_AL_.jpg">
 			<% end %>
