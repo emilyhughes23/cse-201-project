@@ -54,6 +54,12 @@ ActiveRecord::Schema.define(version: 20151112070317) do
     t.boolean  "mod"
   end
 
+	create_table "comments", force: :cascade do |t|
+		t.string "name"
+		t.text "description"
+		t.integer "movie_id"
+	end 
+	
   add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end
