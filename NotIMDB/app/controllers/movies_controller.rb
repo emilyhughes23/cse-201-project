@@ -36,11 +36,12 @@ end
   # GET /movies/1
   # GET /movies/1.json
   def show
-    @tweet = Tweet.find(params[:id])
+    @movie = Movie.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
+	end
   end
-
+  
   # GET /movies/new
   def new
     @movie = Movie.new
@@ -48,7 +49,7 @@ end
 
   # GET /movies/1/edit
   def edit
-    @tweet = Movie.find(params[:id])
+    @movie = Movie.find(params[:id])
   end
 
   # POST /movies
@@ -102,4 +103,4 @@ end
       params.require(:movie).permit(:title, :genre, :director, :actor1, :actor2, :actor3, :releaseyr, :rating, :description)
     end
 end
-end
+
