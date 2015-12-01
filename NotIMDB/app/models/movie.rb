@@ -3,26 +3,26 @@ class Movie < ActiveRecord::Base
   
   def self.search(query)
   
-    where("title like ?", "%#{query}%") 
-end
+		where("title like ?", "%#{query}%") 
+	end
 
-def self.filter(selGenre, selRating)
-  
-    where("genre = :genre and rating  = :rating", {genre: selGenre, rating: selRating}) 
+	def self.filter(selGenre, selRating)
+	  
+		where("genre = :genre and rating  = :rating", {genre: selGenre, rating: selRating}) 
 
-end
+	end
 
-def self.filterGenre(selGenre)
-  
-    where("genre = :genre", {genre: selGenre}) 
+	def self.filterGenre(selGenre)
+	  
+		where("genre = :genre", {genre: selGenre}) 
 
-end
+	end
 
-def self.filterRating(selRating)
-  
-    where("rating  = :rating", {rating: selRating}) 
+	def self.filterRating(selRating)
+	  
+		where("rating  = :rating", {rating: selRating}) 
 
-end
+	end
 
 
 end
