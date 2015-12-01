@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :comments
+  resources :comments
   resources :movies
   get 'index'=>'movies#index'
   get 'request'=>'movies#new'
