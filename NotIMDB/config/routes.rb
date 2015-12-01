@@ -12,13 +12,13 @@ Rails.application.routes.draw do
   post ':controller(/:action(/:id(.:format)))'
  get ':controller(/:action(/:id(.:format)))'
 
+resources :users
+get 'signup'  => 'users#new'
+get    'login'   => 'sessions#new'
+post   'login'   => 'sessions#create'
+get 'logout'  => 'sessions#destroy'
 
-
-  resources :users
-  get    'signup'  => 'users#new'
-  get    'login'   => 'sessions#new'
-  post   'login'   => 'sessions#create'
-  get 'logout'  => 'sessions#destroy'
+  
   
   resources :movies do
     resources :comments, :only => [:create]
