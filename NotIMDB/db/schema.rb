@@ -42,6 +42,12 @@ ActiveRecord::Schema.define(version: 20151112070317) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+  
+  create_table "comments", force: :cascade do |t|
+  	t.string "name"
+  	t.text "text"
+  	t.integer "movie_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
