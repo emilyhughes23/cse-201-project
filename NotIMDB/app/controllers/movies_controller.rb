@@ -61,11 +61,7 @@ end
     
       if @movie.save
         redirect_to index_url
-        flash[:success] = "Movie was successfully created."
-       
-
-        format.html { redirect_to @movie, notice: 'Movie was successfully created.' }
-        format.json { render :show, status: :created, location: @movie }
+        flash[:success] = "Movie was successfully created."         
 
       else
        render 'new'
