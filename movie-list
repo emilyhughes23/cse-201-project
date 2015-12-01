@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<title>Movie List</title>
+		<link rel="stylesheet" type="text/css" href="defaultCSS">
+	</head>
+
+	
+	<body>
+		<div style="text-align: center">
+		<h1>Here are a list of our current movies</h1>
+
+		<p>List movies</p>
+
+		<br/><br/>
+		<h3><a href="hello.html">Home</a></h3>
+		</div>
+
+	</body>
+	
+</html>

@@ -1,8 +1,6 @@
 class Movie < ActiveRecord::Base
   validates_uniqueness_of :title
   
-  has_many :comments
-  
   def self.search(query)
   
 		where("title like ?", "%#{query}%") 
