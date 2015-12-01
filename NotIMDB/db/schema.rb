@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20151112070317) do
     t.integer  "releaseyr"
     t.integer  "rating"
     t.text     "description"
-	t.string   "picture_link"
+	t.text   "picture_link"
 	t.boolean  "viewable"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
