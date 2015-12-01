@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20151112070317) do
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-  end
+  end 
 
   create_table "movies", force: :cascade do |t|
     t.string   "title"

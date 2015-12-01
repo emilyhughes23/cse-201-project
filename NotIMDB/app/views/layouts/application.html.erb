@@ -16,11 +16,15 @@
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!--[endif]-->
   </head>
   
 <body>
   <div class="container">
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="NotIMDB/app/assets/javascripts/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="NotIMDB/app/assets/javascripts/bootstrap.min.js"></script>
   	<%= render 'layouts/header' %>
   	
       <% flash.each do |message_type, message| %>
@@ -28,10 +32,7 @@
       <% end %>
       <%= yield %>      
       
-      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="NotIMDB/app/assets/javascripts/jquery.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="NotIMDB/app/assets/javascripts/bootstrap.min.js"></script>
+     
     </div>
 </body>
 </html>
