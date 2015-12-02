@@ -36,15 +36,15 @@
 		<%= content_tag(:iframe, nil, src: @movie.video_link)%>
 
 		
-		<h2>Comments</h2>
+		<h2>Comments</h2>	
  		<div class="col-md-8">
-    	<% if @movie.comments.any? %>
+    		<% if @movie.comments.any? %>
       	<h3>Comments (<%= @movie.comments.count %>)</h3>
-     	 <p class= "comments">
-        <%= render @comments %>
+     	 	<p class= "comments">
+        	<%= render @movie.comments %>
    		</p>
     	<% end %>
-  </div>
+  		</div>
  		
 		<form class="form-inline" role="form">
 		<div class="form-group">
