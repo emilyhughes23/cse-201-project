@@ -17,7 +17,9 @@
       	<li><%= link_to "Not IMDB", home_path, id: "navbar-brand" %></li>
         <li><%= link_to "Movie Database", index_path %></li>
         <li><%= link_to "Request Movie Addition", request_path %></li>
-
+        <% if !current_user.nil?%>
+        <li><%= link_to "All Requested Movies", requestedmovies_path %></li>
+        <% end %>
       </ul>
 	  
       <%= form_tag(movies_path, :method => "get", class: "navbar-form navbar-right") do %>

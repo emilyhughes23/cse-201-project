@@ -4,7 +4,14 @@ Rails.application.routes.draw do
 	resources :movies do
     	resources :comments, :only => [:create]
   	end
-  
+  resources :movies do
+    member do
+     put :toggleon
+    end
+     collection do
+       get :allrequest
+     end
+  end
   resources :movies
   get 'index'=>'movies#index'
   get 'request'=>'movies#new'
@@ -16,6 +23,7 @@ Rails.application.routes.draw do
   get 'show/:id' => 'movies#show'
   post ':controller(/:action(/:id(.:format)))'
  get ':controller(/:action(/:id(.:format)))'
+get 'requestedmovies' => 'movies#allrequest'
 
 resources :users
 get 'signup'  => 'users#new'

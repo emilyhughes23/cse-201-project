@@ -52,6 +52,10 @@ end
   # GET /movies/1/edit
   def edit
     @movie = Movie.find(params[:id])
+    if current_user.nil?
+       flash[:danger] = "Please log in."
+       redirect_to login_url        
+      end
   end
 
   # POST /movies
@@ -94,6 +98,19 @@ end
       format.json { head :no_content }
     end
   end
+
+def toggleon
+    @movie = Movie.find(params[:id])
+    @movie.update_attributes(:viewable => true)
+    if @movie.viewable?
+       redirect_to index_url
+        flash[:success] = "Movie was successfully added."    
+    end
+ end
+
+def allrequest
+  @movies = Movie.all
+end
 
   private
     # Use callbacks to share common setup or constraints between actions.

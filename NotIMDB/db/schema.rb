@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151201082132) do
+ActiveRecord::Schema.define(version: 20151202161522) do
 
   create_table "movie_reqs", force: :cascade do |t|
     t.string   "title"
@@ -40,12 +40,8 @@ ActiveRecord::Schema.define(version: 20151201082132) do
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.text     "picture_link"
-<<<<<<< HEAD
     t.boolean  "viewable",     default: false
-=======
-    t.text		"video_link"
-    t.boolean  "viewable"
->>>>>>> origin/master
+    t.text     "video_link"
   end
 
   create_table "users", force: :cascade do |t|
