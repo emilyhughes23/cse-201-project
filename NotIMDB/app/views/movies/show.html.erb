@@ -37,7 +37,7 @@
 		
 		<h2>Comments</h2>
  		<div id="comments">
-         <%= render :partial => @movie.comments %>
+         <%= render :partial => 'movies/comment', :collection => @movie.comments %>
 		</div>
  		
 		<form class="form-inline" role="form">
