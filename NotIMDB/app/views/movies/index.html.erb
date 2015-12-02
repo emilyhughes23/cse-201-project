@@ -5,8 +5,13 @@
       
 	<div id="container">
 		<h1>All Movies</h1>
-		
-<%= form_tag(movies_path, :method => "get", id: "search-form") do %>
+		<div class="navbar-form" style="text-align:center">
+			<%= form_tag(movies_path, :method => "get") do %>
+				<%= text_field_tag :search, params[:search], placeholder: "Search", class: "form-control", :search => params[:search] %>
+				<%= submit_tag "Search", class: 'btn btn-default' %>
+			<% end %> 
+		</div>
+		<%= form_tag(movies_path, :method => "get", id: "search-form") do %>
 		<div class="row">
 			<div class="col-sm-6">
 				<div>
