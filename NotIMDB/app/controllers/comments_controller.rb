@@ -1,12 +1,17 @@
 class CommentsController < ApplicationController
 	def create
-                @movie = Movie.find(params[:id])
-                @comment = @movie.comments.create!(params[:comment])
-                @comments = Comment.find(:all, :order => 'created_at DESC', :limit => 10)
+                @movie = Movie.find(params[:movie_id])
+                @comments = @movie.comments.build(comment_params)
+                
                 redirect_to @movie
         end
         
     def new
-    @comment = Comment.new
+    @comments = Comment.new
   end
+  
+  private 
+  def comment_params
+      params.require(:comment).permit(:user, :body)
+    end
 end

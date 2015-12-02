@@ -36,9 +36,17 @@
 
 		
 		<h2>Comments</h2>
- 		<div id="comments">
- 			<%= render :partial => @movie.comments %>
- 		</div>
+ 		<% @movie.comments.each do |comment| %>
+  	<p>
+   		 <strong>Commenter:</strong>
+    		<%= comment.user %>
+  	</p>
+ 
+ 	 <p>
+    	<strong>Comment:</strong>
+    		<%= comment.body %>
+  	</p>
+	<% end %>
  		
 		<form class="form-inline" role="form">
 		<div class="form-group">
