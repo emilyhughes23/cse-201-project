@@ -36,10 +36,15 @@
 		<%= content_tag(:iframe, nil, src: @movie.video_link)%>
 
 		
-		<!-- <h2>Comments</h2>
- 		<div id="comments">
-         <%= render :partial => 'movies/comment', :collection => @movie.comments %>
-		</div>
+		<h2>Comments</h2>
+ 		<div class="col-md-8">
+    	<% if @movie.comments.any? %>
+      	<h3>Comments (<%= @movie.comments.count %>)</h3>
+     	 <p class= "comments">
+        <%= render @comments %>
+   		</p>
+    	<% end %>
+  </div>
  		
 		<form class="form-inline" role="form">
 		<div class="form-group">
@@ -50,7 +55,7 @@
 			<%= f.submit "Add comment" %>
 		</div>
 		<% end %>
-		</form> -->
+		</form> 
 	</div>
 <%= link_to 'Edit', edit_movie_path(@movie) %> |
 <%= link_to 'Back', index_path %>

@@ -13,6 +13,15 @@
 
 ActiveRecord::Schema.define(version: 20151202161522) do
 
+  create_table "comments", force: :cascade do |t|
+    t.integer  "movie_id"
+    t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "comments", ["movie_id"], name: "index_comments_on_movie_id"
+
   create_table "movie_reqs", force: :cascade do |t|
     t.string   "title"
     t.string   "genre"
@@ -37,10 +46,10 @@ ActiveRecord::Schema.define(version: 20151202161522) do
     t.integer  "releaseyr"
     t.integer  "rating"
     t.text     "description"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.text     "picture_link"
-    t.boolean  "viewable",     default: false
+    t.boolean  "viewable"
     t.text     "video_link"
   end
 

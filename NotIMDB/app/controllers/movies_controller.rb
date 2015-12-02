@@ -39,7 +39,7 @@ end
   def show
     @movie = Movie.find(params[:id])
     respond_to do |format|
-      format.html # show.html.erb
+      format.html #show.html.erb
 	end
   end
 
