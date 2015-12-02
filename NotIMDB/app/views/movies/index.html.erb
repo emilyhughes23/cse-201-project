@@ -48,12 +48,14 @@
 		
   <div class= "row">
     <% @movies.each do |movie| %>
+    <%if movie.viewable?%>
 		<%= link_to movie_path(movie.id), class:"movieCard col-md-4" do %>
 			<% movie.title %>
 				<h3><%= movie.title %></h3>
 				 <span style="float: left;"><b>Genre:</b> <%= movie.genre %></span>
 				 <span style="float: right;"><b>Rating:</b> <%= movie.rating %></span>
-		<% end %>
+		  <% end %>
+		  <%end%>
     <% end %>
 	</div>
 

@@ -1,5 +1,6 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
+  
 
   # GET /movies
   # GET /movies.json
@@ -103,6 +104,10 @@ end
     # Never trust parameters from the scary internet, only allow the white list through.
     def movie_params
       params.require(:movie).permit(:title, :genre, :director, :actor1, :actor2, :actor3, :releaseyr, :rating, :description)
+    end
+    
+     def viewable_movie
+      redirect_to(index_url) unless movie.viewable?
     end
 end
 
