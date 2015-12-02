@@ -4,14 +4,11 @@
 <%if @movie.viewable?%>
 		<h1><%= @movie.title %></h1>
 
-		<h3>
-		<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-		<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-		<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-		<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-		<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-		</h3>
-
+		<div style="text-align:center;margin-bottom:20px">
+		<% @movie.rating.times do%>
+			<%= image_tag "star.png", class:"star" %>
+		<%end%>
+		</div>
 
 		<div class="row">
 			<div class="col-md-4">

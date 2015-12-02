@@ -92,9 +92,21 @@
  
  img{
 	margin: 15px;
-	max-width:215px;
+	max-width:200px;
 }
 
 .panel {
 	padding:0;
+	float: left;
+	width:350px;
+	margin:15px;
+}
+
+.panel-footer .btn {
+	margin-left:35px;
+}
+
+.star {
+	max-width:20px;
+	margin:2px;	
 }
