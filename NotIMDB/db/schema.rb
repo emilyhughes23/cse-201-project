@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20151201230455) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.text     "picture_link"
+    t.text		"video_link"
     t.boolean  "viewable"
   end
 
