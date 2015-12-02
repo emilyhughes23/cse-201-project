@@ -29,20 +29,20 @@
 			<% movie = Movie.find(1) %>
 			<%= link_to movie_path(movie.id), class:"movieCard col-md-4" do%>
 				<h3><%= movie.title %></h3>
-				<%= image_tag @movie.picture_link %>
+				<%= image_tag movie.picture_link %>
 			<% end %>
 
 			<% movie = Movie.find(2) %>
 			<%= link_to movie_path(movie.id), class:"movieCard col-md-4" do%>
 				<h3><%= movie.title %></h3>
-				<%= image_tag @movie.picture_link %>
+				<%= image_tag movie.picture_link %>
 			<% end %>
 
 			
 			<% movie = Movie.find(32) %>
 			<%= link_to movie_path(movie.id), class:"movieCard col-md-4" do%>			
 				<h3><%= movie.title %></h3>
-				<%= image_tag @movie.picture_link %>
+				<%= image_tag movie.picture_link %>
 			<% end %>
 		</div>
 
@@ -51,21 +51,21 @@
 			<% movie = Movie.find(17) %>
 			<%= link_to movie_path(movie.id), class:"movieCard col-md-4" do%>
 				<h3><%= movie.title %></h3>
-				<%= image_tag @movie.picture_link %>
+				<%= image_tag movie.picture_link %>
 			<% end %>
 
 
 			<% movie = Movie.find(28) %>
 			<%= link_to movie_path(movie.id), class:"movieCard col-md-4" do%>
 				<h3><%= movie.title %></h3>
-				<%= image_tag @movie.picture_link %>
+				<%= image_tag movie.picture_link %>
 			<% end %>
 
 			
 			<% movie = Movie.find(13) %>
 			<%= link_to movie_path(movie.id), class:"movieCard col-md-4" do%>
 				<h3><%= movie.title %></h3>
-				<%= image_tag @movie.picture_link %>
+				<%= image_tag movie.picture_link %>
 			<% end %>
 		</div>
 	</div>
