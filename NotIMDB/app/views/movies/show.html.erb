@@ -33,7 +33,7 @@
   		<%= @movie.rating %>
 		</p>
 		
-		
+		<%= content_tag(:iframe, nil, src: @movie.video_link)%>
 
 		
 		<h2>Comments</h2>
