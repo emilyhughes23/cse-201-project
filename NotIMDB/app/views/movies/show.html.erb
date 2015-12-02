@@ -1,5 +1,6 @@
 <div id="container">
 <p id="notice"><%= notice %></p>
+
 		<h1><%= @movie.title %></h1>
 
 		<h3>
@@ -36,7 +37,7 @@
 		
 		<h2>Comments</h2>
  		<div id="comments">
-         	<%= render :partial => @movie.comments %>
+ 			<%= render :partial => @movie.comments %>
  		</div>
  		
 		<form class="form-inline" role="form">
@@ -50,12 +51,6 @@
 		<% end %>
 		</form>
 	</div>
-	
-
-
-
-
-
 
 
 <%= link_to 'Edit', edit_movie_path(@movie) %> |
