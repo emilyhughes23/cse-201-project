@@ -1,8 +1,7 @@
 class CommentsController < ApplicationController
 	def create
                 @movie = Movie.find(params[:movie_id])
-                @comments = @movie.comments.build(comment_params)
-                
+                @comments = @movie.comments.create!(comment_params)
                 redirect_to @movie
         end
         
