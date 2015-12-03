@@ -55,7 +55,7 @@
 			<% end %>
 
 
-			<% movie = Movie.find(28) %>
+			<% movie = Movie.find(31) %>
 			<%= link_to movie_path(movie.id), class:"movieCard col-md-4" do%>
 				<h3><%= movie.title %></h3>
 				<%= image_tag movie.picture_link %>
