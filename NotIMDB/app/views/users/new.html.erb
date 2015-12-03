@@ -22,8 +22,10 @@
       <%= f.label :password_hint, "Password Hint" %>
       <%= f.text_field :password_hint, class: 'form-control' %>
       
+	  <div class="actions">
       <%= f.submit "Submit", class: "btn btn-primary" %>
-    <% end %>
+	  </div>
+	<% end %>
     
     <h4>Already a member? <%= link_to "Login here", login_path %></h4>
   </div>
