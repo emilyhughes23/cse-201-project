@@ -47,8 +47,12 @@ ActiveRecord::Schema.define(version: 20151203170544) do
     t.integer  "releaseyr"
     t.integer  "rating"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.text     "picture_link"
+    t.boolean  "viewable",      default: false
+    t.text     "video_link"
+    t.text     "purchase_link"
   end
 
   create_table "users", force: :cascade do |t|
@@ -59,10 +63,8 @@ ActiveRecord::Schema.define(version: 20151203170544) do
     t.string   "password_digest"
     t.string   "password_hint"
     t.boolean  "admin",           default: false
-    t.boolean  "mod"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end
-

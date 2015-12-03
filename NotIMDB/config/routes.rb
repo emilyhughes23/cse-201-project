@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
-<<<<<<< HEAD
 
 	resources :movies do
-    	resources :comments, :only => [:create]
-  	end
+  		resources :comments, :only => [:create, :destroy]
+	end
+	get 'movies/:movie_id/comments/:id(.:format)' => 'comments#destroy'
   resources :movies do
     member do
      put :toggleon
@@ -14,12 +14,7 @@ Rails.application.routes.draw do
      end
   end
   resources :movies
-=======
-  resources :movies do
-  		resources :comments, :only => [:create, :destroy]
-	end
-	get 'movies/:movie_id/comments/:id(.:format)' => 'comments#destroy'
->>>>>>> 5b8ed2caa54b5a19e9fcb915d5b7f7cc8d228001
+
   get 'index'=>'movies#index'
   get 'request'=>'movies#new'
   root 'pages#home'

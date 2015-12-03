@@ -1,11 +1,7 @@
 class Movie < ActiveRecord::Base
   validates_uniqueness_of :title
-  
-<<<<<<< HEAD
-  has_many :comments
-=======
   has_many :comments, :dependent => :destroy
->>>>>>> 5b8ed2caa54b5a19e9fcb915d5b7f7cc8d228001
+
   
   def self.search(query)
   
