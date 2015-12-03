@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151203012545) do
+ActiveRecord::Schema.define(version: 20151203081451) do
 
   create_table "movie_reqs", force: :cascade do |t|
     t.string   "title"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20151203012545) do
     t.text     "picture_link"
     t.boolean  "viewable",      default: false
     t.text     "video_link"
-    t.string   "purchase_link"
+    t.text     "purchase_link"
   end
 
   create_table "users", force: :cascade do |t|

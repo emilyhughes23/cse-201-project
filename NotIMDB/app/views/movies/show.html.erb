@@ -21,6 +21,7 @@
 				<li>Starring  <%= @movie.actor1 %>, <%= @movie.actor2 %>, and  <%= @movie.actor3 %></li>
 				<li>Released <%= @movie.releaseyr %></li>
 				<li>Genre: <%= @movie.genre %></li>
+				<li><%= link_to "Buy Now!", @movie.purchase_link %></li>
 			</ul>
 			</div>
 		</div>
@@ -32,11 +33,13 @@
 		</br>
 		<% if !current_user.nil?%>
 		<% if current_user.admin?%>
-			<%= button_to "Destroy", @movie, method: :delete, data: { confirm: "You sure?" } %>
-			|<%= button_to 'Edit', edit_movie_path(@movie) %>
+			<div class="form-horizontal" >
+				<%= button_to "Destroy", @movie, class:"btn btn-default", type:"button", method: :delete, data: { confirm: "You sure?" } %>
+				<%= button_to 'Edit', edit_movie_path(@movie), type:"button", class:"btn btn-default" %>
+			</div>
 		<% end %>
 		<% end %>
-		
+		</br>
 		<%= link_to 'Back', index_path %>
 	</div>
  
