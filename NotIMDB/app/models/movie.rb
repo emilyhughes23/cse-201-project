@@ -7,6 +7,21 @@ class Movie < ActiveRecord::Base
   
 		where("title like ?", "%#{query}%") 
 	end
+	
+	def self.searchFiltBoth(query, selGenre, selRating)
+  
+		where("title like ?", "%#{query}%").where("genre = :genre and rating  = :rating", {genre: selGenre, rating: selRating}) 
+	end
+	
+	def self.searchFiltGenre(query, selGenre)
+  
+		where("title like ?", "%#{query}%").where("genre = :genre", {genre: selGenre}) 
+	end
+	
+	def self.searchFiltRate(query, selRating)
+  
+		where("title like ?", "%#{query}%").where("rating  = :rating", {rating: selRating}) 
+	end
 
 	def self.filter(selGenre, selRating)
 	  
