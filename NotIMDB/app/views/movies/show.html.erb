@@ -32,8 +32,8 @@
 		</br>
 		<% if !current_user.nil?%>
 		<% if current_user.admin?%>
-			<%= link_to 'Destroy', :method => :destroy %>
-			|<%= link_to 'Edit', edit_movie_path(@movie) %>
+			<%= button_to "Destroy", @movie, method: :delete, data: { confirm: "You sure?" } %>
+			|<%= button_to 'Edit', edit_movie_path(@movie) %>
 		<% end %>
 		<% end %>
 		
