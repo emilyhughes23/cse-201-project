@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
@@ -14,19 +14,15 @@
 
 ActiveRecord::Schema.define(version: 20151203081451) do
 
-  create_table "movie_reqs", force: :cascade do |t|
-    t.string   "title"
-    t.string   "genre"
-    t.string   "director"
-    t.string   "actor1"
-    t.string   "actor2"
-    t.string   "actor3"
-    t.integer  "releaseyr"
-    t.integer  "rating"
-    t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+	create_table "comments", force: :cascade do |t|
+    t.string   "commenter"
+    t.text     "body"
+    t.integer  "movie_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
+
+  add_index "comments", ["movie_id"], name: "index_comments_on_movie_id"
 
   create_table "movies", force: :cascade do |t|
     t.string   "title"
@@ -59,3 +55,4 @@ ActiveRecord::Schema.define(version: 20151203081451) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end
+
