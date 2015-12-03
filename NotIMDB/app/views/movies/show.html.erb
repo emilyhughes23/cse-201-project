@@ -42,9 +42,13 @@
 			<%= comment.body %>
 		  </p>
 		  <p>
-		  <%= link_to 'Delete Comment', [@movie, comment],
+		  <% if !current_user.nil?%>
+		  <% if current_user.admin||current_user.mod?%>
+			<%= link_to 'Delete Comment', [@movie, comment],
 					   :confirm => 'Are you sure?',
 					   :method => :delete %>
+		  <% end %>
+ 		  <% end %>
 		</p>
 		<% end %>
 

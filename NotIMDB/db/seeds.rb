@@ -43,6 +43,7 @@ Movie.create(id:33 ,title:"Terminator 2: Judgement Day", genre:"Action", directo
 Movie.create(id:34 ,title:"Total Recall", genre:"Action", director:"Paul Verhoeven", actor1:"Arnold Schwarzenegger", actor2:"Sharon Stone", actor3:"Michael Ironside", releaseyr:1990, rating:4, description:"When a man goes for virtual vacation memories of the planet Mars, an unexpected and harrowing series of events forces him to go to the planet for real, or does he?", picture_link:"https://planetdystopia.files.wordpress.com/2013/08/total-recall-1990-movie-poster.jpg", video_link:"https://www.youtube.com/embed/WFMLGEHdIjE", purchase_link:"https://www.google.com/search?safe=off&noj=1&biw=1920&bih=955&tbm=shop&q=total+recall+original+dvd&oq=total+recall+original+dvd&gs_l=serp.3...142587.146716.0.146920.22.20.0.0.0.0.274.2819.0j5j9.14.0....0...1c.1.64.serp..22.0.0.kPq285vEzoQ#spd=7056788619138382570", viewable: true )
 
   
-User.create!(name:  "Admin",email: "admin@gmail.com", password: "123456", password_confirmation: "123456", admin: true)
-User.create!(name:  "User1",email: "user1@gmail.com", password: "123456", password_confirmation: "123456", admin: false)
-User.create!(name:  "User2",email: "user2@gmail.com", password: "123456", password_confirmation: "123456", admin: false)
+User.create!(name:  "Admin",email: "admin@gmail.com", password: "123456", password_confirmation: "123456", admin: true, mod: false)
+User.create!(name:  "User1",email: "user1@gmail.com", password: "123456", password_confirmation: "123456", admin: false, mod: false)
+User.create!(name:  "User2",email: "user2@gmail.com", password: "123456", password_confirmation: "123456", admin: false, mod: false)
+User.create!(name:  "Mod",email: "mod@gmail.com", password: "123456", password_confirmation: "123456", admin: false, mod: true)
