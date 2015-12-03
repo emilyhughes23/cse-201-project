@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
   resources :movies do
-  		resources :comments
+  		resources :comments, :only => [:create, :destroy]
 	end
+	get 'movies/:movie_id/comments/:id(.:format)' => 'comments#destroy'
   get 'index'=>'movies#index'
   get 'request'=>'movies#new'
   root 'pages#home'

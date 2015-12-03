@@ -42,6 +42,11 @@
     <b>Comment:</b>
     <%= comment.body %>
   </p>
+  <p>
+  <%= link_to 'Delete Comment', [@movie, comment],
+               :confirm => 'Are you sure?',
+               :method => :delete %>
+</p>
 <% end %>
 
 <h2>Add a comment:</h2>
