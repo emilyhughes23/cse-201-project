@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :movies
+  resources :movies do
+  		resources :comments
+	end
   get 'index'=>'movies#index'
   get 'request'=>'movies#new'
   root 'pages#home'
