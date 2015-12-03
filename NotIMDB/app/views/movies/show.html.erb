@@ -25,13 +25,9 @@
 			</div>
 		</div>
 		
-		<p>
-  		<strong>Rating:</strong>
-  		<%= @movie.rating %>
-		</p>
-		
-		<%= content_tag(:iframe, nil, src: @movie.video_link)%>
-
+		<div style="text-align:center">
+		<%= content_tag(:iframe, nil, width:"560", height:"315", src: @movie.video_link)%>
+		</div>
 		
 		</br>
 		<% if !current_user.nil?%>
